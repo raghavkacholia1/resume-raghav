@@ -1,26 +1,63 @@
-<page size="A4">
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between h-16 items-center">
+        <!-- Logo -->
+        <a href="#" class="text-xl font-bold text-indigo-600">Raghav.dev</a>
+
+        <!-- Menu items -->
+        <div class="hidden md:flex space-x-6">
+          <a href="#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+          <a href="#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
+          <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
+          <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="#home" class="block py-2 text-gray-700 hover:text-indigo-600">Home</a>
+      <a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600">About</a>
+      <a href="#projects" class="block py-2 text-gray-700 hover:text-indigo-600">Projects</a>
+      <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+    </div>
+  </nav>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Raghav Kacholia - Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <img src="https://images.unsplash.com/photo-1616627989726-dfe3c41493c6" alt="profile">
-      <button class="button">Contact Details</button>
-      <div class="socials">
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-linkedin"></i>
-      </div>
-    </div>
+
     <div class="main-content">
       <h1>RAGHAV KACHOLIA</h1>
       <h2>Student at IIM Bangalore</h2>
@@ -34,8 +71,7 @@
           I bring with me 7 months of valuable experience in the Gems and Jewelry Manufacturing industry, which taught me practical skills in production, customer engagement, and operations. This hands-on exposure has strengthened my interest in starting my own venture.
         </p>
         <p>
-          Beyond academics, I am an avid chess player, which has sharpened my logical and analytical skills. I also enjoy playing the synthesizer in my free time — it's my creative outlet and a source of relaxation.
-        </p>
+         
         <p>
           My ultimate goal is to launch a business that blends modern technology, innovation, and impactful leadership to create meaningful change in the world.
         </p>
